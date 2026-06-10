@@ -913,3 +913,36 @@ video{
 
 }
 
+@media (max-width:768px){
+
+header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.nav-links{
+
+    display:none;
+
+}
+
+.logo{
+
+    font-size:20px;
+
+}
+
+.btn-nav{
+
+    padding:12px 20px;
+
+    font-size:15px;
+
+}
+
+}
