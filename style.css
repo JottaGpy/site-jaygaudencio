@@ -61,7 +61,7 @@ h1,h2,h3,h4{
 
 h1{
 
-    font-size:74px;
+    font-size:100px;
 
     line-height:0.95;
 
@@ -83,6 +83,11 @@ h3{
 
     font-size:32px;
 
+}
+
+h4 {
+    font-size: 26px; /* Você pode aumentar ou diminuir esse número como preferir */
+    margin-bottom: 10px; /* Dá um espacinho elegante entre o título e o texto */
 }
 
 p{
@@ -872,73 +877,97 @@ nav{
 }
 
 /*======================================
-MENU MOBILE
+AJUSTE PARA MANTER O DESKTOP INTACTO
 ======================================*/
-
-.menu-toggle{
-    display:none;
-    font-size:32px;
-    cursor:pointer;
-    z-index:1001;
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-@media(max-width:768px){
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .btn-primary{
-        display:none;
-    }
-
-    .navbar nav{
-
-        position:fixed;
-        top:0;
-        left:-100%;
-
-        width:260px;
-        height:100vh;
-
-        background:#fff;
-
-        display:flex;
-
-        align-items:flex-start;
-
-        justify-content:center;
-
-        transition:.4s;
-
-        box-shadow:0 0 30px rgba(0,0,0,.15);
-
-        z-index:1000;
-
-    }
-
-    .navbar nav ul{
-
-        flex-direction:column;
-
-        margin-top:120px;
-
-        gap:30px;
-
-    }
-
-    .navbar nav.active{
-
-        left:0;
-
-    }
-
+/*======================================
+ESCONDER MENU TOGGLE NO DESKTOP
+======================================*/
+.menu-toggle {
+    display: none;
 }
 
-@media(max-width:768px){
+/*======================================
+RESPONSIVO MOBILE UNIFICADO
+======================================*/
+@media (max-width: 768px) {
+    .container { width: 92%; }
+    section { padding: 80px 0; }
+    
+    h1 { font-size: 42px; line-height: 1.1; }
+    h2 { font-size: 32px; }
+    p { font-size: 17px; }
 
-    .nav-btn{
-        display:none;
+    /* NAVBAR & LOGO */
+    .nav-content { justify-content: space-between; }
+    .logo { font-size: 22px; z-index: 1002; position: relative; } 
+
+    /* CORREÇÃO DA SOBREPOSIÇÃO DA IMAGEM (HERO) */
+    .hero {
+        padding-top: 140px; /* Empurra o conteúdo para sair de trás da barra */
+        align-items: flex-start; /* Evita que o flexbox centralize e jogue pra cima */
+        min-height: auto; 
+        padding-bottom: 60px;
     }
 
+    /* MENU MOBILE (Off-canvas) */
+    .menu-toggle {
+        display: block;
+        font-size: 32px;
+        cursor: pointer;
+        z-index: 1002; 
+        position: relative;
+    }
+
+    .navbar nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%; /* Largura do menu aberto */
+        height: 100vh;
+        background: #F8F7F4;
+        display: flex;
+        flex-direction: column; /* Coloca os links um embaixo do outro */
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 120px; /* Espaço pro logo e pro botão de fechar */
+        transition: .4s ease-in-out;
+        box-shadow: 10px 0 30px rgba(0,0,0,.1);
+        z-index: 1000;
+        gap: 0;
+    }
+
+    .navbar nav.active { left: 0; }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 40px; /* Espaço entre os links e o botão */
+    }
+
+    /* Estilo do botão dentro do menu mobile */
+    .navbar nav .nav-btn-mobile {
+        display: block;
+        width: 80%;
+        text-align: center;
+        padding: 16px;
+    }
+
+    /* GRID REPOSITIONS */
+    .hero-grid, .about-grid, .cards, .timeline, .portfolio-grid, .testimonial-grid, .values {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-text, .cta { text-align: center; }
+    .hero-buttons { justify-content: center; flex-wrap: wrap; }
+    .hero-image img { height: auto; max-height: 450px; }
+    .project { max-width: 100%; margin: auto; }
 }
