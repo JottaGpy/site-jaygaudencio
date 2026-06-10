@@ -876,63 +876,69 @@ MENU MOBILE
 ======================================*/
 
 .menu-toggle{
-
     display:none;
-
-    font-size:34px;
-
+    font-size:32px;
     cursor:pointer;
+    z-index:1001;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .btn-primary{
+        display:none;
+    }
+
+    .navbar nav{
+
+        position:fixed;
+        top:0;
+        left:-100%;
+
+        width:260px;
+        height:100vh;
+
+        background:#fff;
+
+        display:flex;
+
+        align-items:flex-start;
+
+        justify-content:center;
+
+        transition:.4s;
+
+        box-shadow:0 0 30px rgba(0,0,0,.15);
+
+        z-index:1000;
+
+    }
+
+    .navbar nav ul{
+
+        flex-direction:column;
+
+        margin-top:120px;
+
+        gap:30px;
+
+    }
+
+    .navbar nav.active{
+
+        left:0;
+
+    }
 
 }
 
 @media(max-width:768px){
 
-.menu-toggle{
-
-    display:block;
-
-}
-
-nav{
-
-    position:absolute;
-
-    top:90px;
-
-    left:0;
-
-    width:100%;
-
-    background:#F8F7F4;
-
-    display:none;
-
-    padding:25px 0;
-
-    border-top:1px solid #ddd;
-
-}
-
-nav.active{
-
-    display:block;
-
-}
-
-nav ul{
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:22px;
-
-}
-
-.btn-nav{
-
-    display:none;
-
-}
+    .nav-btn{
+        display:none;
+    }
 
 }
