@@ -748,201 +748,125 @@ padding:100px 0;
 }
 ```
 
-/*=====================================
+/*======================================
 RESPONSIVO MOBILE
-=====================================*/
+======================================*/
 
 @media (max-width:768px){
 
-    .container{
-        width:90%;
-    }
-
-    section{
-        padding:80px 0;
-    }
-
-    h1{
-        font-size:42px !important;
-        line-height:1.2;
-    }
-
-    h2{
-        font-size:34px;
-        line-height:1.2;
-    }
-
-    p{
-        font-size:17px;
-    }
-
+.container{
+    width:92%;
 }
 
-@media(max-width:768px){
-
-.hero-grid{
-
-    display:flex;
-
-    flex-direction:column;
-
-    text-align:center;
-
+section{
+    padding:80px 0;
 }
 
-.hero-image{
-
-    order:-1;
-
+h1{
+    font-size:48px;
+    line-height:1.1;
 }
 
-.hero-buttons{
-
-    justify-content:center;
-
+h2{
+    font-size:36px;
 }
 
+p{
+    font-size:17px;
 }
 
-@media(max-width:768px){
+/* NAVBAR */
 
-.navbar .container{
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-.nav-links{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:18px;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.about-grid{
-
-    display:flex;
-
-    flex-direction:column;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.process-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.portfolio-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.project{
-
-    max-width:380px;
-
-    margin:auto;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.testimonials-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.item button{
-
-    font-size:18px;
-
-    padding:20px 0;
-
-}
-
-.content{
-
-    font-size:16px;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.cta{
-
-    text-align:center;
-
-}
-
-}
-
-img,
-video{
-
-    max-width:100%;
-
-    height:auto;
-
-}
-
-@media (max-width:768px){
-
-header .container{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-.nav-links{
-
+nav{
     display:none;
+}
 
+.nav-content{
+    justify-content:space-between;
 }
 
 .logo{
-
-    font-size:20px;
-
+    font-size:22px;
 }
 
 .btn-nav{
+    padding:12px 18px;
+    font-size:14px;
+}
 
-    padding:12px 20px;
+/* HERO */
 
-    font-size:15px;
+.hero-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+}
 
+.hero-text{
+    text-align:center;
+}
+
+.hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero-image img{
+    height:450px;
+}
+
+/* SOBRE */
+
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+/* VALORES */
+
+.values{
+    grid-template-columns:1fr;
+}
+
+/* SERVIÇOS */
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+/* PROCESSO */
+
+.timeline{
+    grid-template-columns:1fr;
+}
+
+/* PORTFÓLIO */
+
+.portfolio-grid{
+    grid-template-columns:1fr;
+}
+
+.project{
+    max-width:380px;
+    margin:auto;
+}
+
+/* DEPOIMENTOS */
+
+.testimonial-grid{
+    grid-template-columns:1fr;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+}
+
+}
+
+@media (max-width:768px){
+
+.btn-nav{
+    display:none;
 }
 
 }
